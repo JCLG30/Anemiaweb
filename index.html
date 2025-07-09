@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -341,6 +341,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        .card h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            text-align: center;
+        }
 
 
         /* Grid Layout */
@@ -524,6 +532,31 @@
             color: var(--dark-color);
             position: relative;
             z-index: 2;
+        }
+        
+        /* Photo Gallery - NUEVA SECCIÓN DE CSS */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+
+        .photo-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
 
 
@@ -809,6 +842,9 @@
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -1012,9 +1048,7 @@
                 </div>
             </div>
             
-            <h3 style="margin-top: 3rem; color: var(--primary-color); font-size: 1.8rem; text-align: center;">
-                <i class="fas fa-utensils"></i> Alimentos ricos en hierro que debes incluir:
-            </h3>
+            <h3><i class="fas fa-utensils"></i> Alimentos ricos en hierro que debes incluir:</h3>
             <div class="food-grid">
                 <div class="food-item">
                     <div class="food-icon">🫘</div>
@@ -1053,31 +1087,42 @@
             <h2><i class="fas fa-chalkboard-teacher"></i>NUESTRAS CHARLAS EDUCATIVAS</h2>
             <p>Como parte del curso Actividades Integradoras III de la Universidad César Vallejo, nuestro Equipo N° 02 realiza charlas educativas sobre anemia para la comunidad:</p>
             
-            <div class="grid">
+            <!-- INICIO DE LA GALERÍA DE FOTOS -->
+            <h3><i class="fas fa-camera-retro"></i> Galería de Actividades</h3>
+            <div class="photo-gallery">
+                <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.12.50_7f137c5d.jpg?raw=true" alt="Equipo N° 02 y niños participando en una dinámica sobre la anemia en una cancha de básquet.">
+                <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.12.54_743ed943.jpg?raw=true" alt="Foto grupal del Equipo N° 02 y los niños de la escuela de fútbol, sosteniendo un cartel sobre la anemia.">
+                <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.12.53_a24d67e1.jpg?raw=true" alt="Dos integrantes del equipo presentando un cartel informativo a los niños sentados en el suelo.">
+                <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.12.52_9ea9376d.jpg?raw=true" alt="El equipo presentando carteles mientras los niños levantan las manos para participar.">
+                <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.12.51_4eed3ea3.jpg?raw=true" alt="Integrantes del equipo interactuando de cerca con un grupo de niños durante la charla.">
+                <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.17.55_0bbf82d8.jpg?raw=true" alt="Miembros del equipo realizando una actividad lúdica con los niños en la cancha.">
+                <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.12.49_6e47f383.jpg?raw=true" alt="Otra foto grupal del equipo y los niños al finalizar la jornada educativa.">
+            </div>
+            <!-- FIN DE LA GALERÍA DE FOTOS -->
+
+            <div class="grid" style="margin-top: 3rem;">
                 <div style="background: linear-gradient(135deg, #e0f2fe, #b3e5fc); padding: 2rem; border-radius: 15px; margin-bottom: 1rem;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-bullseye"></i> Objetivo</h3>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-align: left;"><i class="fas fa-bullseye"></i> Objetivo</h3>
                     <p>Educar sobre la prevención, detección y tratamiento de la anemia, especialmente en jóvenes deportistas.</p>
                 </div>
                 
                 <div style="background: linear-gradient(135deg, #f3e5f5, #e1bee7); padding: 2rem; border-radius: 15px; margin-bottom: 1rem;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-cogs"></i> Metodología</h3>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-align: left;"><i class="fas fa-cogs"></i> Metodología</h3>
                     <p>Charlas dinámicas, material visual, demostraciones prácticas de alimentación saludable y folletos informativos.</p>
                 </div>
                 
                 <div style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); padding: 2rem; border-radius: 15px; margin-bottom: 1rem;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-users"></i> Audiencia</h3>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-align: left;"><i class="fas fa-users"></i> Audiencia</h3>
                     <p>Niños y jóvenes del Complejo Adelita De Velasco Matute - ESCUELA DE FUTBOL "SEMILLERO LA CORUÑA", sus padres y entrenadores.</p>
                 </div>
                 
                 <div style="background: linear-gradient(135deg, #e8f5e8, #c8e6c9); padding: 2rem; border-radius: 15px; margin-bottom: 1rem;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-clock"></i> Duración</h3>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-align: left;"><i class="fas fa-clock"></i> Duración</h3>
                     <p>Sesiones de 45-60 minutos, con espacio para preguntas y respuestas.</p>
                 </div>
             </div>
             
-            <h3 style="margin-top: 3rem; color: var(--primary-color); font-size: 1.8rem; text-align: center;">
-                <i class="fas fa-calendar-alt"></i> Próximas Fechas:
-            </h3>
+            <h3><i class="fas fa-calendar-alt"></i> Próximas Fechas:</h3>
             
             <div class="grid">
                 <div class="prevention-card">
