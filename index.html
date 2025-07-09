@@ -534,7 +534,7 @@
             z-index: 2;
         }
         
-        /* Photo Gallery - NUEVA SECCIÓN DE CSS */
+        /* Photo Gallery */
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1087,7 +1087,6 @@
             <h2><i class="fas fa-chalkboard-teacher"></i>NUESTRAS CHARLAS EDUCATIVAS</h2>
             <p>Como parte del curso Actividades Integradoras III de la Universidad César Vallejo, nuestro Equipo N° 02 realiza charlas educativas sobre anemia para la comunidad:</p>
             
-            <!-- INICIO DE LA GALERÍA DE FOTOS -->
             <h3><i class="fas fa-camera-retro"></i> Galería de Actividades</h3>
             <div class="photo-gallery">
                 <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.12.50_7f137c5d.jpg?raw=true" alt="Equipo N° 02 y niños participando en una dinámica sobre la anemia en una cancha de básquet.">
@@ -1098,7 +1097,6 @@
                 <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.17.55_0bbf82d8.jpg?raw=true" alt="Miembros del equipo realizando una actividad lúdica con los niños en la cancha.">
                 <img src="https://github.com/JCLG30/Anemiaweb/blob/main/Imagen%20de%20WhatsApp%202025-07-08%20a%20las%2021.12.49_6e47f383.jpg?raw=true" alt="Otra foto grupal del equipo y los niños al finalizar la jornada educativa.">
             </div>
-            <!-- FIN DE LA GALERÍA DE FOTOS -->
 
             <div class="grid" style="margin-top: 3rem;">
                 <div style="background: linear-gradient(135deg, #e0f2fe, #b3e5fc); padding: 2rem; border-radius: 15px; margin-bottom: 1rem;">
@@ -1152,9 +1150,14 @@
             <h2><i class="fas fa-star"></i> ¡PARTICIPA EN NUESTRAS CHARLAS EDUCATIVAS!</h2>
             <p>Como Equipo N° 02 del curso Actividades Integradoras III de la Universidad César Vallejo, ofrecemos charlas informativas sobre prevención y tratamiento de la anemia.</p>
             <p>Nuestro propósito es educar a la comunidad deportiva del Complejo Adelita De Velasco Matute - ESCUELA DE FUTBOL "SEMILLERO LA CORUÑA" sobre esta importante condición de salud.</p>
-            <a href="#" class="btn">
+            
+            <!-- ===== BOTÓN CON ENLACE A WHATSAPP ===== -->
+            <!-- REEMPLAZA '51979956261' con tu número de WhatsApp. Incluye el código de país sin el '+' o '00'. -->
+            <a href="https://wa.me/51979956261?text=%C2%A1Hola!%20Quisiera%20inscribirme%20en%20la%20pr%C3%B3xima%20charla%20sobre%20la%20anemia.%20Mi%20nombre%20es:" class="btn" target="_blank">
                 <i class="fas fa-hand-point-right"></i> INSCRÍBETE A NUESTRA PRÓXIMA CHARLA
             </a>
+            <!-- ===== FIN DEL BOTÓN ===== -->
+
         </div>
     </div>
     
@@ -1323,6 +1326,8 @@
         // Add ripple effect to buttons
         document.querySelectorAll('.btn').forEach(button => {
             button.addEventListener('click', function(e) {
+                 if(this.href.includes('wa.me')) return;
+
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);
